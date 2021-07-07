@@ -1,0 +1,105 @@
+  body {
+    background-color: rgb(51, 172, 142);
+    color: rgb(227, 252, 249);
+    font-family:'Times New Roman', Times, serif;
+  }
+
+    h1  {
+    color: rgb(238, 220, 182);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3em;
+    margin-bottom: .3em;
+    text-align: center;
+  }
+
+  h3 {
+      color:rgb(148, 35, 54);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  table {
+    margin: 1em;
+    width: 290px;
+  }
+  
+  th {
+    padding: .2em;
+  }
+
+  content {
+    width: 50%;
+    border: 5px solid red;
+    border-radius: 7px;
+  }
+
+  #submit {
+    color: #FFFFFF;
+    font-size: 18px;
+    text-transform: uppercase;
+    background: #a72c3d;
+    padding: 10px 20px;
+    border: 0;
+    margin-top: 6px; 
+    border-radius: 7px;
+    }
+  
+  #add_name {
+    margin: auto;
+    background-color: rgb(255, 252, 238);
+    border: 3px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-radius: 7px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    margin-bottom: .3em;
+  }
+
+  #message {
+    margin: auto;
+    background-color: rgb(255, 252, 238);
+    border: 3px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-radius: 7px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+  }
+
+  #message_form {
+    margin: auto;
+    display: block;
+    width: 50%;
+  }
+
+  .message_contents {
+    margin: auto;
+    background-color: #a72c3d;
+    width: 50%;
+    border-radius: 4px;
+    padding: .5em;
+    margin-bottom: .6em;
+  }
+  
+  .message_name {
+    font-size: medium;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .message_contents {
+    font-size: medium;
+  }
+
+  .message_time {
+    font-size: xx-small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  #trHeader {
+    color: #900;
+    text-decoration: underline;
+  }
+  
+  .centerCell {
+    text-align: center;
+  }
