@@ -13,8 +13,14 @@
 <br>
 <% @messages.each do | message | %>
   <div class="message_contents">
-    <p class="message_name"><%= message.name %> said,</p>
+    <p class="message_name"><i><%= message.name %> said,</i></p>
     <p class="message_content"><%=message.content %></p>
     <p class="message_time"><%=message.created_at %></p>
+    <p><%= link_to "/messages/#{message.id}",
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "delete_message" do %>
+                  <%= fa_icon "trash"%>
+                  <% end %></p>
+    </ul>
   </div>
 <% end %>

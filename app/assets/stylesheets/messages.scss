@@ -95,6 +95,14 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
+  .delete_message {
+    color:rgb(255, 246, 244)
+  }
+
+  .delete_message:hover {
+    color:rgb(219, 161, 146)
+  }
+
   #trHeader {
     color: #900;
     text-decoration: underline;

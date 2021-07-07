@@ -10,9 +10,18 @@ class MessagesController < ApplicationController
         Message.create(message_params)
         redirect_to action: "index"
     end
+    
+    def destroy
+        @message = Message.find(params[:id])
+        @message.destroy
+    
+        redirect_to action: "index"
+      end
+
     # Only allowing content param + secure website from changing w/ web development tools
     private
     def message_params
         params.require(:message).permit(:content, :name)
     end
+
 end
