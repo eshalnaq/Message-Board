@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 get "/messages", to: "messages#index"
 post "/messages", to: "messages#create"
 delete "/messages/:id", to: "messages#destroy"
+root to: "messages#index"
 end
