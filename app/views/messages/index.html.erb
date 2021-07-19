@@ -1,26 +1,42 @@
+
 <br>
 <br>
 <h1>Message Board</h1>
 <%= @submit %>
 <%= form_with model: @message, id:"message_form" do |form|%>
   <h3>Message</h3>
-  <%= form.text_field :name, id: "add_name", placeholder: "Your Name", required: "required" %>
-  <br>
-  <%= form.text_area :content, size: "70x10", id: "message", placeholder: "Your Message", required: "required" %>
-  <br>
-  <%= form.submit id: "submit"%>
+    <%= form.text_field :name, id: "add_name", placeholder: "Your Name", required: "required" %>
+    <br>
+    <%= form.text_area :content, size: "70x10", id: "message", placeholder: "Type your message here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
+    <br>
+    <!-- character counter -->
+      <p id="character_count"> <span id = "counter">0</span><span> /500</span></p>
+      
+    <%= form.submit id: "submit"%>
 <% end %>
 <br>
 <% @messages.each do | message | %>
   <div class="message_contents">
     <p class="message_name"><i><%= message.name %> said,</i></p>
     <p class="message_content"><%=message.content %></p>
-    <p class="message_time"><%=message.created_at %></p>
-    <p><%= link_to "/messages/#{message.id}",
+    <div class="message_footer"><span class="message_time"><%=message.created_at %></span>
+    <%= link_to "/messages/#{message.id}",
                   method: :delete,
-                  data: { confirm: "Are you sure?" }, class: "delete_message" do %>
+                  data: { confirm: "Are you sure you want to delete your message?" }, class: "delete_message" do %>
                   <%= fa_icon "trash"%>
-                  <% end %></p>
+                  <% end %>
+                  </div>
     </ul>
   </div>
 <% end %>
+
+<script>
+        const textarea = document.querySelector('#message');
+        const counter = document.getElementById('counter');
+
+        textarea.addEventListener('input', updateValue);
+
+        function updateValue(e) {
+        counter.textContent = textarea.value.length;
+      }
+      </script>

@@ -86,8 +86,13 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 
-  .message_contents {
+  .message_content {
     font-size: medium;
+    white-space: pre-wrap;
+  }
+
+  .message_footer {
+    // align-content: space-between;
   }
 
   .message_time {
@@ -96,11 +101,22 @@
   }
 
   .delete_message {
-    color:rgb(255, 246, 244)
+    color:rgb(255, 246, 244);
+    // align-content: flex-end;
+    float: right;
   }
 
   .delete_message:hover {
     color:rgb(219, 161, 146)
+  }
+
+  #character_count {
+    margin: auto;
+    background-color: #a72c3d;
+    width: 20%;
+    border-radius: 4px;
+    padding: .5em;
+    margin-bottom: .6em;
   }
 
   #trHeader {
