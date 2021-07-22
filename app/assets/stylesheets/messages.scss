@@ -2,11 +2,12 @@
     background-color: rgb(51, 172, 142);
     color: rgb(227, 252, 249);
     font-family:'Times New Roman', Times, serif;
+    margin: 0;
   }
 
-    h1  {
-    color: rgb(238, 220, 182);
-    font-family: 'Times New Roman', Times, serif;
+  h1  {
+    color: rgb(253, 244, 226);
+    font-family: monospace;
     font-size: 3em;
     text-align: center;
     margin: auto;
@@ -39,6 +40,8 @@
     border: 5px solid red;
     border-radius: 7px;
   }
+
+// Form Styling
 
   #submit {
     color: #FFFFFF;
@@ -81,15 +84,27 @@
     width: 50%;
   }
 
-  .message_contents {
+  #character_count {
     margin: auto;
     background-color: #a72c3d;
-    width: 50%;
+    width: 10%;
     border-radius: 4px;
     padding: .5em;
     margin-bottom: .6em;
+    text-align: center;
   }
   
+// Posted Message on Index Page
+
+.message_contents {
+  margin: auto;
+  background-color: #a72c3d;
+  width: 50%;
+  border-radius: 4px;
+  padding: .5em;
+  margin-bottom: .6em;
+}
+
   .message_name {
     font-size: medium;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -119,21 +134,14 @@
     color:rgb(219, 161, 146)
   }
 
-  #character_count {
-    margin: auto;
-    background-color: #a72c3d;
-    width: 10%;
-    border-radius: 4px;
-    padding: .5em;
-    margin-bottom: .6em;
-    text-align: center;
+  .comment_msg {
+    color: rgb(255, 246, 244);
+    float: right;
+    margin-right: 0.5em;
   }
 
-  #trHeader {
-    color: #900;
-    text-decoration: underline;
+  .comment_msg:hover {
+    color:rgb(219, 161, 146)
   }
   
-  .centerCell {
-    text-align: center;
-  }
+  

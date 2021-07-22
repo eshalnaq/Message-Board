@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
         @messages = Message.all.order("created_at DESC")
         @message = Message.new
     end
+
     # Creation of messages + redirect to index to post
     def create 
         Message.create(message_params)
@@ -17,6 +18,11 @@ class MessagesController < ApplicationController
     
         redirect_to action: "index"
       end
+    
+    def show
+        @message = Message.find(params[:id])
+        @comments = []
+    end
 
     # Only allowing content param + secure website from changing w/ web development tools
     private

@@ -1,0 +1,36 @@
+<h1 class = "show_comment"> View Full Comment </h1>
+<br>
+
+<div class="full_message_contents">
+    <p class="message_name"><i><%= @message.name %> said,</i></p>
+    <p class="message_content"><%= @message.content %></p>
+    <div class="message_footer"><span class="message_time"><%= @message.created_at %></span>
+    </div>
+        <%= @submit %>
+            <%= form_with model: @comment, id:"comment_form" do |form|%>
+                <%= form.text_field :name, id: "add_name", placeholder: "Your Name", required: "required" %>
+                <br>
+                <%= form.text_area :content, size: "70x10", id: "message", placeholder: "Type your comment here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
+                <br>
+                
+                <%= form.submit id: "submit"%> 
+                <!-- character counter -->
+                <%= fa_icon "comment-dots"%>
+                <span id="character_count"> <span id = "counter">0</span><span> /500</span></span>
+            <% end %>
+  </div>
+
+<!-- Comment Posting -->
+<% @comments.each do | comment | %>
+  <div class="comment_contents">
+    <p class="comment_name"><i><%= comment.name %> said,</i></p>
+    <p class="comment_content"><%=comment.content %></p>
+    <div class="comment_footer"><span class="comment_time"><%= comment.created_at %></span>
+        <%= link_to "/comments/#{comment.id}",
+                      method: :delete,
+                      data: { confirm: "Are you sure you want to delete your comment?" }, class: "delete_comment" do %>
+                      <%= fa_icon "trash"%>
+                      <% end %>
+    </div>
+  </div>
+<% end %>
