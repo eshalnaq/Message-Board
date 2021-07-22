@@ -5,5 +5,6 @@ get "/messages", to: "messages#index"
 post "/messages", to: "messages#create"
 delete "/messages/:id", to: "messages#destroy"
 get "/messages/:id", to: "messages#show"
+get "/comments", to: "comments#show"
 post "/comments", to: "comments#create"
 end

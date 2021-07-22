@@ -6,22 +6,22 @@
     <p class="message_content"><%= @message.content %></p>
     <div class="message_footer"><span class="message_time"><%= @message.created_at %></span>
     </div>
+        <!-- Comment form -->
         <%= @submit %>
-            <%= form_with model: @comment, id:"comment_form" do |form|%>
+            <%= form_with model: @comment, url: "/comments", id:"comment_form" do |form|%>
                 <%= form.text_field :name, id: "add_name", placeholder: "Your Name", required: "required" %>
                 <br>
-                <%= form.text_area :content, size: "70x10", id: "message", placeholder: "Type your comment here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
+                <%= form.text_area :content, size: "70x10", id: "comment", placeholder: "Type your comment here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
                 <br>
-                
+                <%= form.hidden_field :message_id, value: @message.id %>
                 <%= form.submit id: "submit"%> 
                 <!-- character counter -->
-                <%= fa_icon "comment-dots"%>
                 <span id="character_count"> <span id = "counter">0</span><span> /500</span></span>
             <% end %>
   </div>
 
 <!-- Comment Posting -->
-<% @comments.each do | comment | %>
+<% @message.comments.each do | comment | %>
   <div class="comment_contents">
     <p class="comment_name"><i><%= comment.name %> said,</i></p>
     <p class="comment_content"><%=comment.content %></p>
