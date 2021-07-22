@@ -9,7 +9,7 @@
         <!-- Comment form -->
         <%= @submit %>
             <%= form_with model: @comment, url: "/comments", id:"comment_form" do |form|%>
-                <%= form.text_field :name, id: "add_name", placeholder: "Your Name", required: "required" %>
+                <%= form.text_field :name, id: "comment_name", placeholder: "Your Name", required: "required" %>
                 <br>
                 <%= form.text_area :content, size: "70x10", id: "comment", placeholder: "Type your comment here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
                 <br>

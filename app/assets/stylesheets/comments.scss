@@ -22,3 +22,41 @@
     padding: .5em;
     margin-bottom: .6em;
   }
+
+// Comment Form
+
+  #comment_form {
+    margin: auto;
+    margin-top: .4em;
+    background-color: rgb(255, 252, 238);
+    border: 3px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-radius: 7px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 90%;
+  }
+
+  #comment_name {
+    margin: auto;
+    background-color: rgb(255, 252, 238);
+    border: 3px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-radius: 7px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 90%;
+    margin-top: .3em;
+    margin-bottom: .3em;
+  }
+
+  #comment {
+    margin: auto;
+    background-color: rgb(255, 252, 238);
+    border: 3px solid #900;
+    padding-left: .5em;
+    padding-right: .5em;
+    border-radius: 7px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 90%;
+  }

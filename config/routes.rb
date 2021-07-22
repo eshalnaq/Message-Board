@@ -7,4 +7,5 @@ delete "/messages/:id", to: "messages#destroy"
 get "/messages/:id", to: "messages#show"
 get "/comments", to: "comments#show"
 post "/comments", to: "comments#create"
+delete "/comments/:id", to: "comments#destroy"
 end
