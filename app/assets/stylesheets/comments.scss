@@ -1,3 +1,42 @@
+// Home Button
+
+.show_heading {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.title  {
+    color: rgb(253, 244, 226);
+    font-family: monospace;
+    font-size: 3em;
+    text-align: center;
+    margin: auto;
+    background-color: #922130;
+    width: 100%;
+    padding: .5em;
+    margin-bottom: .3em;
+  }
+
+.home {
+    margin: auto;
+    background-color: #922130;
+    width: 100%;
+    padding: .5em;
+    margin-top: 10em;
+    margin-bottom: 3em;
+}
+
+.home_button {
+    color:rgb(255, 246, 244);
+    margin-left: 2em;
+    margin-right: 100%;
+}
+
+.home_button:hover {
+    color:rgb(219, 161, 146)
+}
+
 // Showing Single Message Page
 
 .show_comment {
@@ -25,7 +64,7 @@
 
 // Comment Form
 
-  #comment_form {
+  /*#comment_form {
     margin: auto;
     margin-top: .4em;
     background-color: rgb(255, 252, 238);
@@ -35,28 +74,65 @@
     border-radius: 7px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 90%;
-  }
+  }*/
 
   #comment_name {
     margin: auto;
-    background-color: rgb(255, 252, 238);
-    border: 3px solid #900;
+    background-color: rgba(255, 248, 245, 0.938);
+    border: 1px solid #900;
     padding-left: .5em;
     padding-right: .5em;
     border-radius: 7px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 90%;
-    margin-top: .3em;
+    margin-top: .5em;
     margin-bottom: .3em;
   }
 
   #comment {
     margin: auto;
-    background-color: rgb(255, 252, 238);
-    border: 3px solid #900;
+    background-color: rgba(255, 248, 245, 0.938);
+    border: 1px solid #900;
     padding-left: .5em;
     padding-right: .5em;
     border-radius: 7px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 90%;
+  }
+
+// Comment Posted
+
+  .comment_contents {
+    margin: auto;
+    background-color: #a72c3d;
+    width: 70%;
+    border-radius: 4px;
+    padding: .5em;
+    margin-bottom: .6em;
+  }
+
+  .comment_name {
+    font-size: medium;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .comment_content {
+    font-size: medium;
+    white-space: pre-wrap;
+  }
+
+  .comment_time {
+    // align-content: space-between;
+    font-size: xx-small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .delete_comment {
+    color:rgb(255, 246, 244);
+    // align-content: flex-end;
+    float: right;
+  }
+
+  .delete_comment:hover {
+    color:rgb(219, 161, 146)
   }

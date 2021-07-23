@@ -1,17 +1,29 @@
-<h1 class = "show_comment"> View Full Comment </h1>
+<div class = "show_heading">
+    <p class = "title">Whisper Board</p>
+
+    <!-- Home Button -->
+    <span class= "home">
+        <%= link_to "/messages", class: "home_button" do %>
+            <%= fa_icon "home" %> 
+        <% end %>
+    </span>
+</div>
+<br>
 <br>
 
+<!-- the full message -->
 <div class="full_message_contents">
     <p class="message_name"><i><%= @message.name %> said,</i></p>
     <p class="message_content"><%= @message.content %></p>
     <div class="message_footer"><span class="message_time"><%= @message.created_at %></span>
     </div>
+    <br>
         <!-- Comment form -->
         <%= @submit %>
             <%= form_with model: @comment, url: "/comments", id:"comment_form" do |form|%>
                 <%= form.text_field :name, id: "comment_name", placeholder: "Your Name", required: "required" %>
                 <br>
-                <%= form.text_area :content, size: "70x10", id: "comment", placeholder: "Type your comment here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
+                <%= form.text_area :content, size: "70x5", id: "comment", placeholder: "Type your comment here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
                 <br>
                 <%= form.hidden_field :message_id, value: @message.id %>
                 <%= form.submit id: "submit"%> 
@@ -21,7 +33,7 @@
   </div>
 
 <!-- Comment Posting -->
-<% @message.comments.each do | comment | %>
+<% @comments.each do | comment | %>
   <div class="comment_contents">
     <p class="comment_name"><i><%= comment.name %> said,</i></p>
     <p class="comment_content"><%=comment.content %></p>
