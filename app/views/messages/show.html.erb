@@ -15,6 +15,9 @@
 <div class="full_message_contents">
     <p class="message_name"><i><%= @message.name %> said,</i></p>
     <p class="message_content"><%= @message.content %></p>
+    <% if @message.image.attached? %>
+      <img src= "<%= (url_for(@message.image)) %>" class= "image_uploaded">
+    <% end %>
     <div class="message_footer"><span class="message_time"><%= @message.created_at %></span>
     </div>
     <br>

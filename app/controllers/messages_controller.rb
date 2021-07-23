@@ -28,7 +28,7 @@ class MessagesController < ApplicationController
     # Only allowing content param + secure website from changing w/ web development tools
     private
     def message_params
-        params.require(:message).permit(:content, :name)
+        params.require(:message).permit(:content, :name, :image)
     end
 
 end

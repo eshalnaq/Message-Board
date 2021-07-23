@@ -16,6 +16,7 @@
     <%= form.text_field :name, id: "add_name", placeholder: "Your Name", required: "required" %>
     <br>
     <%= form.text_area :content, size: "70x10", id: "message", placeholder: "Type your message here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
+    <%= form.file_field :image %>
     <br>
       
     <%= form.submit id: "submit"%> 
@@ -30,6 +31,9 @@
   <div class="message_contents">
     <p class="message_name"><i><%= message.name %> said,</i></p>
     <p class="message_content"><%=message.content %></p>
+    <% if message.image.attached? %>
+      <img src= "<%= (url_for(message.image)) %>" class= "image_uploaded">
+    <% end %>
     <div class="message_footer"><span class="message_time"><%=message.created_at %></span>
         <%= link_to "/messages/#{message.id}",
                       method: :delete,
