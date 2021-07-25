@@ -40,6 +40,16 @@
     border-radius: 7px;
   }
 
+  .logout_button {
+    color:rgb(255, 246, 244);
+    //margin-right: 4em;
+    //margin-left: 90%;
+  }
+  
+  .logout_button:hover {
+    color:rgb(219, 161, 146)
+  }
+
 // Form Styling
 
   #submit {

@@ -25,6 +25,14 @@ class MessagesController < ApplicationController
         @comment = Comment.new
     end
 
+    def logout
+
+        session[:user_id] = nil
+    
+        redirect_to '/welcome'
+    
+      end
+
     # Only allowing content param + secure website from changing w/ web development tools
     private
     def message_params
