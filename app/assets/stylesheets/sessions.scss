@@ -1,3 +1,37 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    background-color: rgb(51, 172, 142);
+    color: rgb(227, 252, 249);
+    font-family:'Times New Roman', Times, serif;
+    margin: 0;
+  }
+
+.flex_container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+
+}
+
+.user_typ {
+    background: rgb(148, 40, 21);
+    padding: 2em;
+    margin-top: 10px;
+    border-width: 1em;
+    border-radius: 2em;
+
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+
+.btn-secondary {
+    background-color: #8064A2 !important;
+}

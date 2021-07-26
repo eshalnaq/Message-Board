@@ -1,19 +1,25 @@
 <h1>Login</h1>
 
-    <%= form_tag '/login' do %>
+    <div class="flex_container">
+        <%= form_tag '/login' do %>
+            <div class="user_typ">
 
-        <%= label_tag :username %>
+                <%= label_tag :username %>
 
-        <%= text_field_tag :username %><br>
+                <%= text_field_tag :username %>
+          
+                <br>
+                <br>
 
-        <br>
+                <%= label_tag :password %>
 
-        <%= label_tag :password %>
+                <%= password_field_tag :password %>
 
-        <%= password_field_tag :password %>
+                <br><br>
 
-        <br><br>
-
-        <%= submit_tag "Login" %>
-
-    <% end %>
+                <%= submit_tag "Login", class: "btn btn-secondary"%>
+            
+            </div>
+            
+        <% end %>
+    </div>

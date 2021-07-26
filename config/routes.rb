@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get '/authorized/', to: 'sessions#page_requires_login'
 
+  get '/sessions/logout', to: 'sessions#logout'
+
   delete '/sessions/logout', to: 'sessions#logout'
 
 

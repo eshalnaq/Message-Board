@@ -8,9 +8,11 @@
 
 <% else %>
 
-    <%= button_to "Login", '/login', method: :get %>
+    <%= button_to "Login", '/login', method: :get, class: "btn btn-secondary" %>
 
-    <%= button_to "Sign Up", '/users/new', method: :get %>
+    <br>
+
+    <%= button_to "Sign Up", '/users/new', method: :get, class: "btn btn-secondary" %>
 
 <% end %>
 
