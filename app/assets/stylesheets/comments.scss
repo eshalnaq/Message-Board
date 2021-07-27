@@ -60,26 +60,36 @@
 
   #comment_name {
     margin: auto;
-    background-color: rgba(255, 248, 245, 0.938);
+    background-color: rgba(255, 248, 245, 0.788);
     border: 1px solid #900;
     padding-left: .5em;
     padding-right: .5em;
     border-radius: 7px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    width: 90%;
+    width: 100%;
     margin-top: .5em;
     margin-bottom: .3em;
   }
 
   #comment {
     margin: auto;
-    background-color: rgba(255, 248, 245, 0.938);
+    background-color: rgba(255, 248, 245, 0.788);
     border: 1px solid #900;
     padding-left: .5em;
     padding-right: .5em;
     border-radius: 7px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    width: 90%;
+    width: 100%;
+  }
+
+  #submit_comment {
+    border: 1px solid rgb(229, 138, 138) !important;
+    color: rgb(253, 244, 226) !important;
+    width: 50% !important;
+  }
+
+  #submit_comment:hover {
+    background-color: rgb(229, 138, 138) !important;
   }
 
 // Comment Posted

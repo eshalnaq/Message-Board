@@ -1,6 +1,6 @@
   body {
     background-color: rgb(51, 172, 142);
-    color: rgb(227, 252, 249);
+    color: rgb(227, 252, 249) !important;
     font-family:'Times New Roman', Times, serif;
     margin: 0;
   }
@@ -86,7 +86,7 @@
   
   #add_name {
     margin: auto;
-    background-color: rgb(255, 252, 238);
+    background-color: rgb(255, 238, 238);
     border: 3px solid #900;
     padding-left: .5em;
     padding-right: .5em;
@@ -98,7 +98,7 @@
 
   #message {
     margin: auto;
-    background-color: rgb(255, 252, 238);
+    background-color: rgb(255, 238, 238);
     border: 3px solid #900;
     padding-left: .5em;
     padding-right: .5em;
@@ -116,11 +116,19 @@
   #character_count {
     margin: auto;
     background-color: #a72c3d;
-    width: 10%;
     border-radius: 4px;
     padding: .5em;
     margin-bottom: .6em;
-    text-align: center;
+    float: right;
+  }
+
+  .btn-secondary {
+    background-color: #922130 !important;
+    border: #6d121e !important;
+  }
+
+  .btn-secondary:hover {
+    background-color: #df8a95 !important; 
   }
   
 // Posted Message on Index Page
