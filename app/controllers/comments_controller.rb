@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
 
     def destroy 
         @comment = Comment.find(params[:id])
-        @comment.destroy
+        if current_user.id == @comment.user_id
+            @comment.destroy
+        end
     
         redirect_back fallback_location: { controller: "messages", action: "show", id: @comment.message_id}
     end
@@ -16,6 +18,6 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:content, :name, :message_id)
+        params.require(:comment).permit(:content, :name, :message_id, :user_id)
     end
 end

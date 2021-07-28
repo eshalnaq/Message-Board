@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
     def index
         @messages = Message.all.order("created_at DESC")
         @message = Message.new
+        @user = current_user
     end
 
     # Creation of messages + redirect to index to post
@@ -14,8 +15,9 @@ class MessagesController < ApplicationController
     
     def destroy
         @message = Message.find(params[:id])
-        @message.destroy
-    
+        if current_user.id == @message.user_id
+            @message.destroy
+        end
         redirect_to action: "index"
       end
     
@@ -23,6 +25,7 @@ class MessagesController < ApplicationController
         @message = Message.find(params[:id])
         @comments = @message.comments.all.order("created_at DESC")
         @comment = Comment.new
+        @user = current_user
     end
 
     def logout
@@ -36,7 +39,7 @@ class MessagesController < ApplicationController
     # Only allowing content param + secure website from changing w/ web development tools
     private
     def message_params
-        params.require(:message).permit(:content, :name, :image)
+        params.require(:message).permit(:content, :name, :image, :user_id)
     end
 
 end

@@ -33,6 +33,7 @@
                 <%= form.text_area :content, size: "70x5", id: "comment", placeholder: "Type your comment here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
                 <br>
                 <%= form.hidden_field :message_id, value: @message.id %>
+                <%= form.hidden_field(:user_id, value: @user.id) %>
                 <div class="form_base">
                   <%= form.submit id: "submit_comment", class: "btn btn-outline-secondary"%> 
                   <!-- character counter -->
