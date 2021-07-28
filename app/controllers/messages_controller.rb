@@ -2,7 +2,8 @@ class MessagesController < ApplicationController
     
     # List of created messages + form to create new message
     def index
-        @messages = Message.all.order("created_at DESC")
+        @pagy, @records = pagy(Message.all.order("created_at DESC"))
+        @messages = @records
         @message = Message.new
         @user = current_user
     end
@@ -26,6 +27,7 @@ class MessagesController < ApplicationController
         @comments = @message.comments.all.order("created_at DESC")
         @comment = Comment.new
         @user = current_user
+        @pagy, @records = pagy(@message.comments.all)
     end
 
     def logout

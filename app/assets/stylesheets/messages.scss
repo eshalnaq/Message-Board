@@ -187,5 +187,25 @@
   .comment_msg:hover {
     color:rgb(219, 161, 146)
   }
+
+//nav bar
+
+.pagination {
+  justify-content: center !important;
+}
+
+.page-link {
+  color: #6d121e !important;
+}
+
+.page-link:hover {
+  background-color: rgba(139, 15, 52, 0.164) !important;
+}
+
+.page-item.active .page-link {
+  color: #FFFFFF !important;
+  background-color: rgb(139, 15, 52) !important;
+  border-color: rgb(114, 9, 41) !important;
+}
   
   

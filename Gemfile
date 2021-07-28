@@ -58,3 +58,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # FomtFA Icons
 gem "font-awesome-rails"
+
+# Pagy Pagination Gem
+ gem 'pagy', '~> 3.5' # omit patch digit and use the latest if possible
