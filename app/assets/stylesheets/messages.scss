@@ -20,6 +20,21 @@
     top: 0;
   }
 
+  h2 {
+    color: rgb(253, 244, 226);
+    font-family: monospace;
+    font-size: 2em;
+    text-align: center;
+    margin: auto;
+    background-color: #922130;
+    width: 100%;
+    padding: .3em;
+    margin-bottom: .1em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+
   h3 {
       color:rgb(148, 35, 54);
       font-family: Georgia, 'Times New Roman', Times, serif;
@@ -52,7 +67,7 @@
 
 .home_button {
     color:rgb(255, 246, 244);
-    margin-left: 2em;
+    margin-left: 1em;
     //margin-right: 100%;
 }
 
@@ -60,15 +75,25 @@
     color:rgb(219, 161, 146)
 }
 
-  .logout_button {
-    color:rgb(255, 246, 244);
-    margin-right: 2em;
-    //margin-left: 90%;
-  }
+.user_page_button {
+  color:rgb(255, 246, 244);
+  margin-left: 2em;
+  margin-right: 90%;
+}
+
+.user_page_button:hover {
+  color:rgb(219, 161, 146)
+}
+
+.logout_button {
+  color:rgb(255, 246, 244);
+  margin-right: 2em;
+  //margin-left: 90%;
+}
   
-  .logout_button:hover {
-    color:rgb(219, 161, 146)
-  }
+.logout_button:hover {
+  color:rgb(219, 161, 146)
+}
 
 // Form Styling
 

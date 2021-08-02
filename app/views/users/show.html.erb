@@ -1,0 +1,55 @@
+<div class = "show_heading">
+    <p class = "title">Whisper Board | <%= @user.username %></p>
+
+    <!-- Home Button -->
+    <div class= "home">
+    
+        <%= link_to "/messages", class: "home_button" do %>
+            <%= fa_icon "home" %> 
+        <% end %>
+
+        <%= link_to "/users/#{current_user.id}", class: "user_page_button" do%>
+            <%= fa_icon "user" %>
+        <% end %>
+      
+        <%= link_to "/sessions/logout", class: "logout_button", method: :delete do %>
+          <%= fa_icon "sign-out" %>
+        <% end %>
+
+    </div>
+
+</div>
+
+
+<div class="aboutme_page_contents">
+
+    <h3>About Me</h3>
+
+    <div class="aboutme_display">
+        <p class="aboutme_content"> <%= @user.aboutme %> </p>
+    </div>
+
+    <div class="aboutme_currentuser">
+    <% if current_user.id == @user.id %>
+        <!-- [About me form] -->
+        <%= @submit %>
+        <%= form_with scope: :user, url: "/users/#{@user.id}", id:"aboutme_form" do |form|%>
+            <%= form.text_area :aboutme, value: @user.aboutme, size: "70x4", id: "message", placeholder: "Tell us about yourself! Just a little blurb.", required: "required", maxlength: "300" %>
+            <br><br>
+            <%= form.hidden_field(:user_id, value: @user.id) %>
+            <%= form.submit id: "submit", class: "btn btn-secondary"%> 
+        <% end %> 
+    <% end %>
+
+    </div>
+
+</div>
+
+    <!-- :/ didn't work
+    <script type="text/javascript">
+
+        <div id="edit_aboutme" contenteditable="true">
+            Hi! This is my about me page :)
+        </div>
+
+    </script> -->

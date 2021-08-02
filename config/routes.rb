@@ -35,4 +35,10 @@ Rails.application.routes.draw do
 
   delete "/comments/:id", to: "comments#destroy"
 
+# User Page
+
+  get "/users/:id", to: "users#show"
+
+  post "/users/:id", to: "users#update"
+
 end

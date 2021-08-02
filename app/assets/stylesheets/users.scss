@@ -1,3 +1,25 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// ABOUT ME STYLING
+.aboutme_page_contents {
+    padding: 1em;
+}
+
+.aboutme_display {
+    background-color: #a72c3d;
+    width: 70%;
+    border-radius: 4px;
+    padding: .5em;
+    margin-bottom: .6em;
+}
+
+.aboutme_content {
+    font-size: medium;
+    white-space: pre-wrap;
+}
+
+#aboutme_form {
+    width: 70%;
+}
+
+#edit_aboutme {
+    color: black;
+}
