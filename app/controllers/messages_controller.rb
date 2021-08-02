@@ -18,6 +18,8 @@ class MessagesController < ApplicationController
         @message = Message.find(params[:id])
         if current_user.id == @message.user_id
             @message.destroy
+        elsif current_user.superuser
+            @message.destroy
         end
         redirect_to action: "index"
       end

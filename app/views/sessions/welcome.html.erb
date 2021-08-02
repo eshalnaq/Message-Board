@@ -24,11 +24,22 @@
 
     <h1>Welcome!</h1>
 
-    <%= button_to "Login", '/login', method: :get, class: "btn btn-secondary" %>
-
+    <br>
     <br>
 
-    <%= button_to "Sign Up", '/users/new', method: :get, class: "btn btn-secondary" %>
+    <div class="flex_container">
+
+        <div class="user_signlog">
+
+            <%= button_to "Login", '/login', method: :get, class: "btn btn-secondary" %>
+
+            <br>
+
+            <%= button_to "Sign Up", '/users/new', method: :get, class: "btn btn-secondary" %>
+        
+        </div>
+
+    </div>
 
 <% end %>
 

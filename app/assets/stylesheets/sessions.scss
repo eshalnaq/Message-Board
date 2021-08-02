@@ -18,7 +18,22 @@ body {
 }
 
 .user_typ {
-    background: rgb(148, 40, 21);
+    background: #922130;
+    padding: 2em;
+    margin-top: 10px;
+    border-width: 1em;
+    border-radius: 2em;
+
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+
+.user_signlog {
+    background: #922130;
     padding: 2em;
     margin-top: 10px;
     border-width: 1em;
