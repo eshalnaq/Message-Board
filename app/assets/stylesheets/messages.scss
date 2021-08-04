@@ -1,5 +1,4 @@
   body {
-    background-color: rgb(51, 172, 142);
     color: rgb(227, 252, 249) !important;
     font-family:'Times New Roman', Times, serif;
     margin: 0;
@@ -54,6 +53,10 @@
     border: 5px solid red;
     border-radius: 7px;
   }
+
+.show_heading {
+  padding: 0% !important;
+}
 
   .home {
     margin: auto;

@@ -1,0 +1,21 @@
+<div class = "show_heading">
+    <p class = "title">Whisper Board | <%= @user.username %></p>
+
+    <!-- Home Button -->
+    <div class= "home">
+    
+        <%= link_to "/messages", class: "home_button" do %>
+            <%= fa_icon "home" %> 
+        <% end %>
+
+        <%= link_to "/users/#{current_user.id}", class: "user_page_button" do%>
+            <%= fa_icon "user" %>
+        <% end %>
+      
+        <%= link_to "/sessions/logout", class: "logout_button", method: :delete do %>
+          <%= fa_icon "sign-out" %>
+        <% end %>
+
+    </div>
+
+</div>

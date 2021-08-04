@@ -2,21 +2,7 @@
 
     <h1> You are Logged In, <%= current_user.username %></h1>
 
-    <div class = "show_heading">
-    <p class = "title">Whisper Board</p>
-
-    <!-- Home Button -->
-    <div class= "home">
-    
-        <%= link_to "/messages", class: "home_button" do %>
-            <%= fa_icon "home" %> 
-        <% end %>
-      
-        <%= link_to "/sessions/logout", class: "logout_button", method: :delete do %>
-          <%= fa_icon "sign-out" %>
-        <% end %>
-
-    </div>
+    <%= render partial: "shared/user_header" %>
 
 </div>
 
