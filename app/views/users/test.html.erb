@@ -1,0 +1,20 @@
+<script> 
+$(document.body).ready(function(){
+	$("button").click( "slow", function(){
+      if ( $( "div" ).first().is( ":hidden" ) ) {
+          $("div").first().slideDown();
+      } else {
+          $("div").first().slideUp();
+      }
+     });
+});
+</script> 
+
+
+
+<button id="sliding_box_btn" class="btn btn-outline-primary">Press me!</button>
+<div class="sliding_box">
+    <p>Hey! Surprise!</p>
+</div>
+
+

@@ -24,6 +24,10 @@ class UsersController < ApplicationController
 
   end
 
+  def test
+
+  end
+
   def update
 
     @user = current_user

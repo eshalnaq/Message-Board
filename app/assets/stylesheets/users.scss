@@ -1,4 +1,8 @@
 // ABOUT ME STYLING
+#container {
+    display: flex; /* or inline-flex */
+}
+
 .aboutme_page_contents {
     padding: 1em;
 }
@@ -8,7 +12,6 @@
     width: 70%;
     border-radius: 4px;
     padding: .5em;
-    margin-bottom: .6em;
 }
 
 .aboutme_content {
@@ -22,4 +25,32 @@
 
 #edit_aboutme {
     color: black;
+}
+
+// TEST PAGE STYLING
+
+body {
+    margin: auto;
+    padding: 4em;
+}
+
+#sliding_box_btn {
+    border-color: rgb(31, 110, 84) !important;
+    color: rgb(31, 110, 84) !important;
+    width: 200px;
+}
+
+#sliding_box_btn:hover {
+    background-color: rgb(31, 110, 84) !important;
+    color: azure !important;
+}
+
+.sliding_box {
+    background-color: rgb(31, 110, 84);
+    position: absolute;
+    height:500px; 
+    width:200px;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    padding: .5em;
 }

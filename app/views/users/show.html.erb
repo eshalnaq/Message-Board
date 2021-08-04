@@ -25,25 +25,33 @@
 
     <h3>About Me</h3>
 
-    <div class="aboutme_display">
-        <p class="aboutme_content"> <%= @user.aboutme %> </p>
-    </div>
-
-    <div class="aboutme_currentuser">
+    <div class="aboutme_currentuser" id = "container">
     <% if current_user.id == @user.id %>
         <!-- [About me form] -->
         <%= @submit %>
         <%= form_with scope: :user, url: "/users/#{@user.id}", id:"aboutme_form" do |form|%>
             <%= form.text_area :aboutme, value: @user.aboutme, size: "70x4", id: "message", placeholder: "Tell us about yourself! Just a little blurb.", required: "required", maxlength: "300" %>
-            <br><br>
+            <br>
             <%= form.hidden_field(:user_id, value: @user.id) %>
             <%= form.submit id: "submit", class: "btn btn-secondary"%> 
         <% end %> 
+        <div class="aboutme_display" style="float:left; margin:10px">
+            <p class="aboutme_content"> <%= @user.aboutme %> </p>
+        </div>
+        <% else %>
+        <div class="aboutme_display" style="float:left; margin:10px">
+            <p class="aboutme_content"> <%= @user.aboutme %> </p>
+        </div>
     <% end %>
-
+    
+    
     </div>
 
+    
+    
 </div>
+
+<%= button_to "Test", '/users/test', method: :get, class: "btn btn-secondary" %>
 
     <!-- :/ didn't work
     <script type="text/javascript">
