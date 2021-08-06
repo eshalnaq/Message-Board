@@ -2,9 +2,12 @@
 
 <div class="aboutme_page_contents">
 
-    <h3>About Me</h3>
+    <h3>About Me, <%= displayname(@user) %></h3>
 
+    <!-- ABOUT ME PAGE CONTENTS -->
     <div class="aboutme_currentuser" id = "container.">
+
+    <!-- Only shown if it's your own user page -->
     <% if current_user.id == @user.id %>
         <script> 
             $(document.body).ready(function(){
@@ -20,7 +23,7 @@
         </script> 
 
         <div class="aboutme_display">
-            <p class="aboutme_content"> <%= @user.aboutme %> </p>
+            <p class="aboutme_content"><%= @user.aboutme %> </p>
             <a href="#" id="edit_box_btn"><%=fa_icon "edit"%></a>
         </div>
         <br>
@@ -28,15 +31,17 @@
             <!-- [About me form] -->
             <%= @submit %>
             <%= form_with scope: :user, url: "/users/#{@user.id}", id:"aboutme_form" do |form|%>
+                <%= form.text_area :displayname, value: @user.displayname, size: "70x1", id: "message", placeholder: "Change your display name here.", maxlength: "15" %>
                 <%= form.text_area :aboutme, value: @user.aboutme, size: "70x4", id: "message", placeholder: "Tell us about yourself! Just a little blurb.", required: "required", maxlength: "300" %>
                 <br>
                 <%= form.hidden_field(:user_id, value: @user.id) %>
                 <%= form.submit id: "submit", class: "btn btn-secondary"%> 
             <% end %> 
         </div>
+
         <% else %>
         <div class="aboutme_display" style="float:left; margin:10px">
-            <p class="aboutme_content"> <%= @user.aboutme %> </p>
+            <p class="aboutme_content"><%= @user.aboutme %> </p>
         </div>
     <% end %>
     
