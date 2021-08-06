@@ -42,6 +42,6 @@ Rails.application.routes.draw do
 
   post "/users/:id", to: "users#update"
 
-
+  get "/users", to: "users#show"
 
 end

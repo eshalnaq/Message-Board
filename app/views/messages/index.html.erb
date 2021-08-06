@@ -18,7 +18,16 @@
 <!-- Message posting + option to delete -->
 <% @messages.each do | message | %>
   <div class="message_contents">
-    <p class="message_name"><i><%= displayname(message.user) %> said,</i></p>
+    <p class="message_name">
+      <% if message.user.nil? %>
+        <i><%= displayname(message.user) %> said,</i>
+      <% elsif %>
+        <%= link_to "/users/#{message.user_id}" do %>
+        <i><%= displayname(message.user) %></i>
+        <%end%>
+        <i> said,</i>
+      <%end%>
+    </p>
     <p class="message_content"><%=message.content %></p>
     <% if message.image.attached? %>
       <img src= "<%= (url_for(message.image)) %>" class= "image_uploaded">
