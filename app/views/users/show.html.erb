@@ -4,18 +4,35 @@
 
     <h3>About Me</h3>
 
-    <div class="aboutme_currentuser" id = "container">
+    <div class="aboutme_currentuser" id = "container.">
     <% if current_user.id == @user.id %>
-        <!-- [About me form] -->
-        <%= @submit %>
-        <%= form_with scope: :user, url: "/users/#{@user.id}", id:"aboutme_form" do |form|%>
-            <%= form.text_area :aboutme, value: @user.aboutme, size: "70x4", id: "message", placeholder: "Tell us about yourself! Just a little blurb.", required: "required", maxlength: "300" %>
-            <br>
-            <%= form.hidden_field(:user_id, value: @user.id) %>
-            <%= form.submit id: "submit", class: "btn btn-secondary"%> 
-        <% end %> 
-        <div class="aboutme_display" style="float:left; margin:10px">
+        <script> 
+            $(document.body).ready(function(){
+                $("#edit_box_btn").click( "slow", function(){
+                    event.stopPropagation();
+                if ( $("#aboutme_form").is( ":hidden" ) ) {
+                    $("#aboutme_form").slideDown();
+                } else {
+                    $("#aboutme_form").slideUp();
+                }
+                });
+            });
+        </script> 
+
+        <div class="aboutme_display">
             <p class="aboutme_content"> <%= @user.aboutme %> </p>
+            <a href="#" id="edit_box_btn"><%=fa_icon "edit"%></a>
+        </div>
+        <br>
+        <div id="aboutme_edit">
+            <!-- [About me form] -->
+            <%= @submit %>
+            <%= form_with scope: :user, url: "/users/#{@user.id}", id:"aboutme_form" do |form|%>
+                <%= form.text_area :aboutme, value: @user.aboutme, size: "70x4", id: "message", placeholder: "Tell us about yourself! Just a little blurb.", required: "required", maxlength: "300" %>
+                <br>
+                <%= form.hidden_field(:user_id, value: @user.id) %>
+                <%= form.submit id: "submit", class: "btn btn-secondary"%> 
+            <% end %> 
         </div>
         <% else %>
         <div class="aboutme_display" style="float:left; margin:10px">
@@ -25,10 +42,10 @@
     
     
     </div>
-
-    
     
 </div>
+
+<br><br><br>
 
 <%= button_to "Test", '/users/test', method: :get, class: "btn btn-secondary" %>
 

@@ -12,6 +12,7 @@
     width: 70%;
     border-radius: 4px;
     padding: .5em;
+    overflow: auto;
 }
 
 .aboutme_content {
@@ -19,12 +20,31 @@
     white-space: pre-wrap;
 }
 
+.aboutme_edit {
+    display: none;
+    background-color: #a72c3d;
+    padding: 1em;
+    width: 50%;
+}
+
 #aboutme_form {
     width: 70%;
+    display: none;
 }
 
 #edit_aboutme {
     color: black;
+}
+
+#edit_box_btn {
+    color:rgb(255, 246, 244);
+    //display: block;
+    //text-align: right;
+    float: right;
+}
+
+#edit_box_btn:hover {
+    color:rgb(219, 161, 146)
 }
 
 // TEST PAGE STYLING
@@ -53,4 +73,5 @@
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
     padding: .5em;
+    display: none;
 }
