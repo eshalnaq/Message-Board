@@ -15,6 +15,12 @@
  *= require_self
  */
 
- 
+a {
+    color:rgb(255, 246, 244) !important;
+}
+
+a:hover {
+    color:rgb(219, 161, 146) !important;
+}
 
  

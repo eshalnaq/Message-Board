@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
         if current_user.id == @comment.user_id
             @comment.destroy
+        elsif current_user.superuser
+            @comment.destroy
         end
     
         redirect_back fallback_location: { controller: "messages", action: "show", id: @comment.message_id}
