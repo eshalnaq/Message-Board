@@ -23,7 +23,10 @@
         </script> 
 
         <div class="aboutme_display">
-            <p class="aboutme_content"><%= @user.aboutme %> </p>
+            <% if @user.image.attached? %>
+            <img src= "<%= (url_for(@user.image)) %>" id= "pfp_image" class="pfp_image_big">
+            <% end %>
+            <span class="aboutme_content"><%= @user.aboutme %> </span>
             <a href="#" id="edit_box_btn"><%=fa_icon "edit"%></a>
         </div>
         <br>
@@ -32,6 +35,7 @@
             <%= @submit %>
             <%= form_with scope: :user, url: "/users/#{@user.id}", id:"aboutme_form" do |form|%>
                 <%= form.text_area :displayname, value: @user.displayname, size: "70x1", id: "message", placeholder: "Change your display name here.", maxlength: "15" %>
+                <%= form.file_field :image, class: "btn btn-secondary", value: @user.image %>
                 <%= form.text_area :aboutme, value: @user.aboutme, size: "70x4", id: "message", placeholder: "Tell us about yourself! Just a little blurb.", required: "required", maxlength: "300" %>
                 <br>
                 <%= form.hidden_field(:user_id, value: @user.id) %>
@@ -41,7 +45,10 @@
 
         <% else %>
         <div class="aboutme_display" style="float:left; margin:10px">
-            <p class="aboutme_content"><%= @user.aboutme %> </p>
+            <% if @user.image.attached? %>
+            <img src= "<%= (url_for(@user.image)) %>" class= "pfp_image">
+            <% end %>
+            <span class="aboutme_content"><%= @user.aboutme %> </span>
         </div>
     <% end %>
     

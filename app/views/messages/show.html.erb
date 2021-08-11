@@ -2,7 +2,23 @@
 
 <!-- the full message -->
 <div class="full_message_contents">
-    <p class="message_name"><i><%= @message.name %> said,</i></p>
+    <!-- Profile image -->
+    <% if @message.user && @message.user.image.attached? %>
+      <img src= "<%= (url_for(@message.user.image)) %>" id="pfp_image" class= "pfp_image_small">
+    <% end %>
+    <!-- end pfp -->
+    <span class="message_name">
+        <span class="message_name">
+          <% if @message.user.nil? %>
+            <i><%= displayname(@message.user) %> said,</i>
+          <% elsif %>
+            <%= link_to "/users/#{@message.user_id}" do %>
+            <i><%= displayname(@message.user) %></i>
+            <%end%>
+            <i> said,</i>
+          <%end%>
+        </span>
+    </span>
     <p class="message_content"><%= @message.content %></p>
     <% if @message.image.attached? %>
       <img src= "<%= (url_for(@message.image)) %>" class= "image_uploaded">
@@ -28,7 +44,12 @@
 <!-- Comment Posting -->
 <% @comments.each do | comment | %>
   <div class="comment_contents">
-    <p class="comment_name">
+    <!-- Profile image -->
+    <% if @message.user && @message.user.image.attached? %>
+      <img src= "<%= (url_for(@message.user.image)) %>" id="pfp_image" class= "pfp_image_small">
+    <% end %>
+    <!-- end pfp -->
+    <span class="comment_name">
       <% if comment.user.nil? %>
         <i><%= displayname(comment.user) %> said,</i>
       <% elsif %>
@@ -37,7 +58,7 @@
         <%end%>
         <i> said,</i>
       <%end%>
-    </p>
+    </span>
     <p class="comment_content"><%=comment.content %></p>
     <div class="comment_footer"><span class="comment_time"><%= comment.created_at %></span>
         <%= link_to "/comments/#{comment.id}",

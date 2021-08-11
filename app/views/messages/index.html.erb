@@ -18,7 +18,12 @@
 <!-- Message posting + option to delete -->
 <% @messages.each do | message | %>
   <div class="message_contents">
-    <p class="message_name">
+    <!-- Profile image -->
+    <% if message.user && message.user.image.attached? %>
+      <img src= "<%= (url_for(message.user.image)) %>" id="pfp_image" class= "pfp_image_small">
+    <% end %>
+    <!-- end pfp -->
+    <span class="message_name">
       <% if message.user.nil? %>
         <i><%= displayname(message.user) %> said,</i>
       <% elsif %>
@@ -27,7 +32,7 @@
         <%end%>
         <i> said,</i>
       <%end%>
-    </p>
+    </span>
     <p class="message_content"><%=message.content %></p>
     <% if message.image.attached? %>
       <img src= "<%= (url_for(message.image)) %>" class= "image_uploaded">
