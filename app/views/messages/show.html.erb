@@ -5,6 +5,8 @@
     <!-- Profile image -->
     <% if @message.user && @message.user.image.attached? %>
       <img src= "<%= (url_for(@message.user.image)) %>" id="pfp_image" class= "pfp_image_small">
+    <% else %>
+      <img src = "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png" id= "pfp_image" class="pfp_image_big">
     <% end %>
     <!-- end pfp -->
     <span class="message_name">

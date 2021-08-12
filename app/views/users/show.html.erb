@@ -24,7 +24,9 @@
 
         <div class="aboutme_display">
             <% if @user.image.attached? %>
-            <img src= "<%= (url_for(@user.image)) %>" id= "pfp_image" class="pfp_image_big">
+                <img src= "<%= (url_for(@user.image)) %>" id= "pfp_image" class="pfp_image_big">
+            <% else %>
+                <img src = "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png" id= "pfp_image" class="pfp_image_big">
             <% end %>
             <span class="aboutme_content"><%= @user.aboutme %> </span>
             <a href="#" id="edit_box_btn"><%=fa_icon "edit"%></a>
@@ -46,7 +48,9 @@
         <% else %>
         <div class="aboutme_display" style="float:left; margin:10px">
             <% if @user.image.attached? %>
-            <img src= "<%= (url_for(@user.image)) %>" class= "pfp_image">
+                <img src= "<%= (url_for(@user.image)) %>" id= "pfp_image" class="pfp_image_big">
+            <% else %>
+                <img src = "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png" id= "pfp_image" class="pfp_image_big">
             <% end %>
             <span class="aboutme_content"><%= @user.aboutme %> </span>
         </div>
