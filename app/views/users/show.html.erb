@@ -37,9 +37,14 @@
             <%= @submit %>
             <%= form_with scope: :user, url: "/users/#{@user.id}", id:"aboutme_form" do |form|%>
                 <%= form.text_area :displayname, value: @user.displayname, size: "70x1", id: "message", placeholder: "Change your display name here.", maxlength: "15" %>
-                <%= form.file_field :image, class: "btn btn-secondary", value: @user.image %>
                 <%= form.text_area :aboutme, value: @user.aboutme, size: "70x4", id: "message", placeholder: "Tell us about yourself! Just a little blurb.", required: "required", maxlength: "300" %>
                 <br>
+                <!-- <%= form.file_field :image, class: "btn btn-secondary", value: @user.image %> -->
+                <span class="btn btn-secondary btn-file">
+                    Change Icon <%=fa_icon "image"%>
+                    <%= form.file_field :image, value: @user.image %>
+                </span>
+                <br><br>
                 <%= form.hidden_field(:user_id, value: @user.id) %>
                 <%= form.submit id: "submit", class: "btn btn-secondary"%> 
             <% end %> 
@@ -63,7 +68,7 @@
 
 <br><br><br>
 
-<%= button_to "Test", '/users/test', method: :get, class: "btn btn-secondary" %>
+<!-- <%= button_to "Test", '/users/test', method: :get, class: "btn btn-secondary" %> -->
 
     <!-- :/ didn't work
     <script type="text/javascript">

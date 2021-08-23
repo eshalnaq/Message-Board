@@ -5,13 +5,17 @@
 <%= form_with model: @message, id:"message_form" do |form|%>
   <h3>Whisper</h3>
     <%= form.text_area :content, size: "70x10", id: "message", placeholder: "Type your message here! Max limit is 500 characters.", required: "required", maxlength: "500" %>
-    <%= form.file_field :image, class: "btn btn-secondary" %>
-    <br><br>
+    <!-- <br><br> -->
     <%= form.hidden_field(:user_id, value: @user.id) %>
-      
-    <%= form.submit id: "submit", class: "btn btn-secondary"%> 
-    <!-- character counter -->
-      <span id="character_count"> <span id = "counter">0</span><span> /500</span></span>
+    <div id="container">
+      <div class="btn btn-secondary btn-file" id="add_image">
+         Add Image <%=fa_icon "image"%>
+         <%= form.file_field :image %>
+      </div>
+      <%= form.submit id: "submit", class: "btn btn-secondary"%> 
+      <!-- character counter -->
+        <div id="character_count"> <span id = "counter">0</span><span> /500</span></div>
+    </div>
 <% end %>
 <br>
 
